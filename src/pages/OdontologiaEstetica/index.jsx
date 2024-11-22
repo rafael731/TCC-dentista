@@ -5,7 +5,7 @@ export default function Odontologia() {
 
     return (
         <div>
-                <h1>abcd</h1>
+                <h1>abc</h1>
         </div>
 
     )
