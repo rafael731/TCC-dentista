@@ -1,0 +1,459 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Container principal */
+.main-container {
+  width: 100%;
+  height: 1000vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra de navegação */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px; // Menor altura da navbar
+  background-color: #026EF9; // Cor azul definida
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); // Leve sombra para contraste
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000; // Garante que a navbar esteja sempre acima do conteúdo
+
+  .logo {
+    img {
+      height: 60px; // Logo um pouco menor
+      width: auto;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 200px;
+    align-items: center;
+
+    .menu-item {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff; // Cor do texto em branco para contraste com o fundo azul
+      padding: 10px 15px;
+      background-color: #026EF9; // Fundo azul para os links de menu
+      border-radius: 5px;
+      transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease, background-color 0.3s ease;
+
+      &:hover {
+        color: #868684; // Cor amarela ao passar o mouse
+        background-color: #014d93; // Tom de azul mais escuro para o hover
+        transform: translateY(-3px); // Animação de elevação
+        letter-spacing: 1px; // Aumenta o espaçamento das letras ao passar o mouse
+      }
+
+      &:active {
+        color: #ffd700; // Cor mais dourada quando clicado
+        background-color: #014d93; // Manter o fundo mais escuro no estado ativo
+        transform: translateY(0); // Retorna à posição original
+      }
+
+      &.quem, &.tratamentos, &.contato {
+        font-size: 1.2rem; // Tamanho da fonte dos links
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px 20px; // Menor espaçamento em dispositivos móveis
+    
+    .menu {
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .menu-item {
+      font-size: 1.2rem;
+      padding: 10px 0;
+    }
+
+    .logo img {
+      height: 35px; // Logo menor em dispositivos móveis
+    }
+  }
+}
+
+.hero {
+  margin-top: 80px; // Adiciona margem superior para que o conteúdo não sobreponha a navbar
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  // Altura da tela inteira para a imagem
+  position: relative;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;  // Faz a imagem cobrir a tela inteira
+  background-position: center;
+  z-index: -1;  // Coloca a imagem de fundo atrás do texto
+}
+
+.hero-text {
+  z-index: 1;
+  color: #fff;
+  text-align: right;
+  padding: 0 40px;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #026EF9;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #014d93;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+  }
+}
+
+
+.hero {
+  margin-top: 0px; // Adiciona margem superior para que o conteúdo não sobreponha a navbar
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  // Altura da tela inteira para a imagem
+  position: relative;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;  // Faz a imagem cobrir a tela inteira
+  background-position: center;
+  z-index: -1;  // Coloca a imagem de fundo atrás do texto
+}
+
+.hero-text {
+  z-index: 1;
+  color: #fff;
+  text-align: right;
+  padding: 0 40px;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #026EF9;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #014d93;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+  }
+}
+
+/* Logo */
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex: 10; 
+  justify-content: center;
+  gap: 200px;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+/* Seção Hero */
+.hero {
+  position: relative;
+  height: calc(100vh - 80px); /* A altura total da tela menos a navbar */
+  display: flex;
+  justify-content: flex-end; /* Texto alinhado à direita */
+  align-items: center;
+  padding: 0 50px;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 40%;
+  color: white;
+  text-align: right; /* Texto alinhado à direita */
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.hero-text h1 .highlight {
+  color: #0077cc;
+  
+  padding: 0 5px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.hero-text h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #0077cc;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #005fa3;
+}
+
+/* Tratamentos Section */
+.tratamentos {
+  padding: 40px 50px;
+  background-color: #e9f7fb;
+  text-align: center;
+}
+
+.tratamentos h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* Cards de Tratamentos */
+.tratamento-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-link {
+  color: #0077cc;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+.about-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: justify;
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .about-content {
+      line-height: 1.6;
+      color: #333;
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .about-content {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .hero {
+    justify-content: center; /* Texto centralizado em telas menores */
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text h2 {
+    font-size: 24px;
+  }
+
+  .cta-button {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+}
